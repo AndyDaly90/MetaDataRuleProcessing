@@ -14,13 +14,22 @@
 
 </form>
 <div class="dropdown">
-    <button onclick="dropList()" class="drop_btn">Select Rule</button>
+    <button onclick="dropList()" class="drop_btn">String Management</button>
     <div id = "drop_list" class="dropdown_content">
         <input type="button" value="Field Append" onclick="fieldAppend();">
         <input type="button" value="Field Prepend" onclick="fieldPrepend()">
         <input type="button" value="Remove Numbers" onclick="removeNumbers()">
         <input type="button" value="Strip HTML tags" onclick="stripTags()">
         <input type="button" value="Concatenation" onclick="concat()">
+        <input type="button" value="Read From" onclick="readFrom()">
+        <input type="button" value="Read Until" onclick="readUntil()">
+        <input type="button" value="Set Value" onclick="setValue()">
+    </div>
+</div>
+<div class="dropdown">
+    <button onclick="dropList2()" class="drop_btn">Mathematical Functions</button>
+    <div id = "drop_list2" class="dropdown_content">
+        <input type="button" value="Addition" onclick="addition();">
     </div>
 </div>
 </body>
