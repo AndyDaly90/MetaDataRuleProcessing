@@ -6,6 +6,10 @@ function dropList2() {
     document.getElementById("drop_list2").classList.toggle("show");
 }
 
+function dropList3() {
+    document.getElementById("drop_list3").classList.toggle("show");
+}
+
 window.onclick = function(event) {
     if (!event.target.matches('.drop_btn')) {
 
@@ -112,9 +116,35 @@ function setValue() {
 }
 
 function addition() {
-    var additionRule = "AddRule Name[[-SEP-]]Form Id[[-SEP-]]Destination field[[-SEP-]]First Number field[[-SEP-]]Second Number field[[-SEP-]][[-SEP-]][[-SEP-]][[-SEP-]][[-SEP-]][[-SEP-]][[-SEP-]][[-SEP-]][[-SEP-]][[-SEP-]][[-SEP-]][[-SEP-]][[-SEP-]]";
+   
+}
+
+function readDelimited_csv(){
+
+    var rule = "DelimitedFile[[-SEP-]]FORMID[[-SEP-]].csv[[-SEP-]]DELIMITER[[-SEP-]]DELETE_WHEN_DONE[[-SEP-]]FORCE_FIELD_MATCH[[-SEP-]][[-SEP-]][[-SEP-]][[-SEP-]][[-SEP-]]True[[-SEP-]]0[[-SEP-]]IMPORT_LOCATION[[-SEP-]]";
+    var formId = prompt("Enter the form ID");
+    var delimiter = prompt("Enter delimiter value");
+    var deleteWhenDone = prompt("Delete when Processed? Y/N");
+    var forceMatch = prompt("If the field counts do not match, should the record be inserted? Y/N");
+    var importLocation = prompt("Enter the location of the import:")
+
+    if(deleteWhenDone == 'Y'){
+        var deleteWD = True;
+    }else{
+        deleteWD = False;
+    }
+
+    if(forceMatch == 'Y'){
+       var force = True;
+    }else{
+        force = False;
+    }
+
+    var myRule = rule.replace(/FORMID/g, formId).replace(/DELIMITER/g, delimiter).replace(/DELETE_WHEN_DONE/g, deleteWD).replace(/FORCE_FIELD_MATCH/g, force).replace(/IMPORT_LOCATION/g, importLocation);
+    alertResult(myRule);
 
 }
+
 
 
 
